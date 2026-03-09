@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,5 +26,8 @@ public class JobEntity {
 	private String location;
 	private String companyName;
 	private String postedDate;
+	
+	@ManyToOne
+	@JoinColumn(name="recruiter_id")
 	private int recruiterId;
 }
