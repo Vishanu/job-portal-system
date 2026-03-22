@@ -28,8 +28,47 @@ public class ApplicationEntity {
 
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private int user;
+	private UserEntity user;
+	
 	private String resumeUrl;
 	private String status;
 	private LocalDate appliedDate;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public JobEntity getJob() {
+		return job;
+	}
+	public void setJob(JobEntity job) {
+		this.job = job;
+	}
+	public UserEntity getUser() {
+		return user;
+	}
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
+	public String getResumeUrl() {
+		return resumeUrl;
+	}
+	public void setResumeUrl(String resumeUrl) {
+		this.resumeUrl = resumeUrl;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public LocalDate getAppliedDate() {
+		return appliedDate;
+	}
+	public void setAppliedDate(LocalDate appliedDate) {
+		this.appliedDate = appliedDate;
+	}
+	
+	
 }
