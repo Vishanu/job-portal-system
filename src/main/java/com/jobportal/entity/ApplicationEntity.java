@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class ApplicationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name="Job_id")
 	private JobEntity job;
@@ -33,42 +33,4 @@ public class ApplicationEntity {
 	private String resumeUrl;
 	private String status;
 	private LocalDate appliedDate;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public JobEntity getJob() {
-		return job;
-	}
-	public void setJob(JobEntity job) {
-		this.job = job;
-	}
-	public UserEntity getUser() {
-		return user;
-	}
-	public void setUser(UserEntity user) {
-		this.user = user;
-	}
-	public String getResumeUrl() {
-		return resumeUrl;
-	}
-	public void setResumeUrl(String resumeUrl) {
-		this.resumeUrl = resumeUrl;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public LocalDate getAppliedDate() {
-		return appliedDate;
-	}
-	public void setAppliedDate(LocalDate appliedDate) {
-		this.appliedDate = appliedDate;
-	}
-	
-	
 }
