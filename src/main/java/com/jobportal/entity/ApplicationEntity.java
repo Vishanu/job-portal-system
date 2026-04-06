@@ -2,6 +2,8 @@ package com.jobportal.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.jobportal.enums.ApplicationStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,12 +20,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="applications")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ApplicationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
-	@JoinColumn(name="Job_id")
+	@JoinColumn(name="job_id")
 	private JobEntity job;
 
 	@ManyToOne
@@ -31,6 +34,6 @@ public class ApplicationEntity {
 	private UserEntity user;
 	
 	private String resumeUrl;
-	private String status;
+	private ApplicationStatus status;
 	private LocalDate appliedDate;
 }
