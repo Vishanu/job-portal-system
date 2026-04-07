@@ -34,5 +34,9 @@ public class UserEntity {
     @JsonIgnore
 	private List<JobEntity> jobs;
 
+    public UserEntity(Integer id){
+        this.id = id;
+    }
+
 
 }
